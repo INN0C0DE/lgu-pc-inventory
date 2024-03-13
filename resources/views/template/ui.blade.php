@@ -40,11 +40,15 @@
         <div class="title-nav p-3">
         {{-- <a class=" navbar-brand mb-0 h1 p-2" href="{{ route("inventory.index") }}"> --}}
             {{-- PC Inventory  --}}
-        </a>
+        {{-- </a> --}}
+
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon"></span>
         </button>
+
+
+
         {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
