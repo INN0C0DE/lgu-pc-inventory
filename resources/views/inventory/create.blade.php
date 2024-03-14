@@ -3,7 +3,7 @@
 @section('content')
     <h1> <a href="{{ route('inventory.index') }}" ><i class="bi bi-chevron-left"></i></a></i> Add Inventory</h1>
 
-    <form action="{{ route('inventory.store') }}" method="post">
+    <form action="{{ route('inventory.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
 

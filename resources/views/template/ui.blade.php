@@ -38,46 +38,14 @@
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
         <div class="title-nav p-3">
-        {{-- <a class=" navbar-brand mb-0 h1 p-2" href="{{ route("inventory.index") }}"> --}}
-            {{-- PC Inventory  --}}
-        {{-- </a> --}}
-
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon"></span>
         </button>
 
-
-
-        {{-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-        </ul> --}}
-        {{-- <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form> --}}
         </div>
     </div>
+
     </nav>
 
 
@@ -139,6 +107,10 @@
                                     <i class="bi bi-printer-fill ms-3 me-1"></i>
                                     <span>Print Inventory</span>
                                 </a>
+                                <a class="nav-link " href="{{ route('logout') }}">
+                                    <i class="fa-solid fa-power-off"></i>
+                                    <span>Logout</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -170,6 +142,14 @@
                         <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
                             <i class="bi bi-printer-fill ms-3 me-1"></i>
                             <span>Print Inventory</span>
+                        </a>
+                        <hr>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf <!-- Add CSRF token for Laravel -->
+                        </form>
+                        <a class="nav-link text-white" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <i class="fa-solid fa-power-off ms-3 me-1"></i>
+                            <span>Logout</span>
                         </a>
                     </div>
                 </div>
@@ -270,7 +250,7 @@
         @endif
     </script> --}}
 
-
+        <script src="https://kit.fontawesome.com/d4078fb8b7.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
