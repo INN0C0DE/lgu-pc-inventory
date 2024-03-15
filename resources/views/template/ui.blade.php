@@ -18,159 +18,171 @@
         }
 
         @media print {
-        .navbar,
-        .printBTN,
-        .sidebars,
+            .navbar,
+            .printBTN,
+            .sidebars,
+            .footer {
+                display: none !important;
+            }
+            .tbPrint {
+                overflow: unset !important;
+            }
+            .backBTN {
+                display: none !important;
+            }
+        }
+
+        /* Ensure the sidebar and footer occupy full height */
+        html, body {
+            height: 100%;
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure wrapper takes at least full viewport height */
+        }
+
+        .container-fluid {
+            padding-right: 0; /* Remove right padding */
+            padding-left: 0; /* Remove left padding */
+        }
+
+        .row {
+            margin-right: 0; /* Remove right margin */
+            margin-left: 0; /* Remove left margin */
+            flex-grow: 1; /* Allow row to grow and fill remaining space */
+        }
+
         .footer {
-        display: none !important;
+            margin-top: auto; /* Push footer to the bottom */
+            width: 100%; /* Ensure footer spans the entire width */
         }
-        .tbPrint {
-        overflow:unset !important;
-        }
-        .backBTN {
-            display: none !important;
-        }
-}
+
+
+
+
+
 
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-    <div class="container-fluid">
-        <div class="title-nav p-3">
-        </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="wrapper">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <div class="title-nav p-3"></div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
 
-        </div>
-    </div>
+        <!-- container-fluid for contents-->
+        <!-- vh-100 is for full height -->
+        <div class="container-fluid p-0">
+            <div class="row g-1">
 
-    </nav>
-
-
-
-    <!-- container-fluid for contents-->
-    <!-- vh-100 is for full height -->
-    <div class=" container-fluid p-0">
-        <div class=" row g-1">
-            {{-- <div class="col-lg-2">
-                <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark vh-100">
-                    <a href="{{ route('inventory.index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <svg class="bi me-1 d-none d-md-block" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                        <span class="fs-4">
-                            <img src="{{ asset('images/pc_logo2-CENTER.png') }}" alt="PC LOGO" class="img-fluid" style="max-width: 200px; height: auto;">
-                        </span>
-                    </a>
-
-                    <hr>
-                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
-                            <i class="bi bi-table ms-3 me-1"></i>
-                            <span>Home</span>
-                        </a>
-                        <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
-                            <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
-                            <span>Add Inventory</span>
-                        </a>
-                    </div>
-                </div>
-            </div> --}}
-
-            <!-- Offcanvas Sidebar for Mobile View -->
-            <div class="sidebars d-lg-none">
-                <!-- Button trigger offcanvas -->
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div class="offcanvas-body bg-dark">
-                        <div class="d-flex justify-content-end">
-                            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="d-flex flex-column flex-shrink-0 p-3 text-white vh-100">
-                            <a href="{{ route('inventory.index') }}" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                                <svg class="bi me-1 d-none d-md-block" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                                <span class="fs-4">
-                                    <img src="{{ asset('images/pc_logo2-CENTER.png') }}" alt="PC LOGO" class="img-fluid" style="max-width: 200px; height: auto;">
-                                </span>
-                            </a>
-
-                            <hr>
-                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
-                                    <i class="bi bi-table ms-3 me-1"></i>
-                                    <span>Home</span>
+                <!-- Offcanvas Sidebar for Mobile View -->
+                <div class="sidebars d-lg-none">
+                    <!-- Button trigger offcanvas -->
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-body bg-dark">
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            <div class="d-flex flex-column flex-shrink-0 p-3 text-white vh-100">
+                                <a href="{{ route('inventory.index') }}" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                                    <svg class="bi me-1 d-none d-md-block" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                                    <span class="fs-4">
+                                        <img src="{{ asset('images/pc_logo2-CENTER.png') }}" alt="PC LOGO" class="img-fluid" style="max-width: 200px; height: auto;">
+                                    </span>
                                 </a>
-                                <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
-                                    <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
-                                    <span>Add Inventory</span>
-                                </a>
-                                <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
-                                    <i class="bi bi-printer-fill ms-3 me-1"></i>
-                                    <span>Print Inventory</span>
-                                </a>
-                                <a class="nav-link " href="{{ route('logout') }}">
-                                    <i class="fa-solid fa-power-off"></i>
-                                    <span>Logout</span>
-                                </a>
+
+                                <hr>
+                                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
+                                        <i class="bi bi-table ms-3 me-1"></i>
+                                        <span>Home </span>
+                                    </a>
+                                    <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
+                                        <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
+                                        <span>Add Inventory</span>
+                                    </a>
+                                    <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
+                                        <i class="bi bi-printer-fill ms-3 me-1"></i>
+                                        <span>Print Inventory</span>
+                                    </a>
+                                    <hr>
+                                    {{-- Logout function --}}
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf <!-- Add CSRF token for Laravel -->
+                                    </form>
+                                    <a class="nav-link text-white" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <i class="fa-solid fa-power-off ms-3 me-1"></i>
+                                        <span>Logout</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Regular Sidebar for Desktop View -->
+                <div class="sidebars col-lg-2 d-none d-lg-block bg-dark text-white">
+                    <div class="p-3 text-white">
+                        <a href="{{ route('inventory.index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                            <svg class="bi me-1 d-none d-md-block" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                            <span class="fs-4">
+                                <img src="{{ asset('images/pc_logo2-CENTER.png') }}" alt="PC LOGO" class="img-fluid" style="max-width: 200px; height: auto;">
+                            </span>
+                        </a>
 
-            <!-- Regular Sidebar for Desktop View -->
-            <div class="sidebars col-lg-2 d-none d-lg-block ">
-                <div class=" p-3 text-white bg-dark vh-100 ">
-                    {{-- d-flex flex-column flex-shrink-0 was removed. --}}
-                    <a href="{{ route('inventory.index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                        <svg class="bi me-1 d-none d-md-block" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                        <span class="fs-4">
-                            <img src="{{ asset('images/pc_logo2-CENTER.png') }}" alt="PC LOGO" class="img-fluid" style="max-width: 200px; height: auto;">
-                        </span>
-                    </a>
-
-                    <hr>
-                    <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
-                            <i class="bi bi-table ms-3 me-1"></i>
-                            <span>Home</span>
-                        </a>
-                        <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
-                            <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
-                            <span>Add Inventory</span>
-                        </a>
-                        <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
-                            <i class="bi bi-printer-fill ms-3 me-1"></i>
-                            <span>Print Inventory</span>
-                        </a>
                         <hr>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf <!-- Add CSRF token for Laravel -->
-                        </form>
-                        <a class="nav-link text-white" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            <i class="fa-solid fa-power-off ms-3 me-1"></i>
-                            <span>Logout</span>
-                        </a>
+                        <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
+                                <i class="bi bi-table ms-3 me-1"></i>
+                                <span>Home </span>
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
+                                <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
+                                <span>Add Inventory</span>
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
+                                <i class="bi bi-printer-fill ms-3 me-1"></i>
+                                <span>Print Inventory</span>
+                            </a>
+                            <hr>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf <!-- Add CSRF token for Laravel -->
+                            </form>
+                            <a class="nav-link text-white" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa-solid fa-power-off ms-3 me-1"></i>
+                                <span>Logout</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-10 p-5">
-                @yield('content')
+                <div class="col-lg-10 p-5 min-vh-100">
+                    @yield('content')
+                </div>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="footer container-fluid bg-dark text-white">
+    <footer class="footer mt-auto">
+        <div class="container-fluid bg-dark text-white">
             <div class="row">
                 <div class="col-md-12 p-2">
-                    <p class="text-center">All rights reserved</p>
+                    <p class="text-center">All rights reserved © 2024</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Your toast containers and scripts here -->
     <div class="toast-container position-fixed bottom-0 end-0 p-3">
         <div id="flash_error" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
           <div class="toast-header bg-danger text-white">
@@ -207,7 +219,8 @@
         </div>
       </div>
 
-        @if (Session::has('success'))
+    <!-- Your JavaScript libraries and scripts here -->
+    @if (Session::has('success'))
         <script>
             swal("Success", "{{ Session::get('success') }}", "success",
             {
@@ -216,39 +229,6 @@
             });
         </script>
         @endif
-
-        {{-- @if (Session::has('welcome'))
-        <script>
-            Swal.fire({
-            title: "Custom width, padding, color, background.",
-            width: 600,
-            padding: "3em",
-            color: "#716add",
-            background: "#fff url(/images/trees.png)",
-            backdrop: `
-                rgba(0,0,123,0.4)
-                url("/images/nyan-cat.gif")
-                left top
-                no-repeat
-            `
-            });
-        </script>
-        @endif --}}
-      {{-- <script type="text/javascript">
-        @if (Session::has('flash_error'))
-          const toast = new bootstrap.Toast(document.getElementById('flash_error'))
-          toast.show()
-
-        @elseif (Session::has('flash_message'))
-          const toast = new bootstrap.Toast(document.getElementById('flash_message'))
-          toast.show()
-
-        @elseif (Session::has('flash_success'))
-          const toast = new bootstrap.Toast(document.getElementById('flash_success'))
-          toast.show()
-
-        @endif
-    </script> --}}
 
         <script src="https://kit.fontawesome.com/d4078fb8b7.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>

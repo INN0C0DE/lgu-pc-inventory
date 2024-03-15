@@ -88,8 +88,8 @@
 
 
                     <option value="N/A">N/A</option>
-                  </select>
-                  <span class="text-danger">{{ $errors->first('department') }}</span>
+                </select>
+                <span class="text-danger">{{ $errors->first('department') }}</span>
             </div>
             <div class="col-md-6 mb-2">
                 <label for="exampleFormControlInput1" class="form-label">Processor:</label>
@@ -101,21 +101,7 @@
                 <input type="text" class="form-control" id="motherboard" name="motherboard" placeholder="ex. ASUS TUF Gaming B550M-PLUS">
                 <span class="text-danger">{{ $errors->first('motherboard') }}</span>
             </div>
-            {{-- <div class="col-md-2 mb-2">
-                <label for="exampleFormControlInput1" class="form-label">Storage Type 1:</label>
-                <select class="form-select" aria-label="storageType1" id="storageType1" name="storageType1">
-                    <option selected>Select Storage Type</option>
-                    <option value="SSD">SSD</option>
-                    <option value="HDD">HDD</option>
-                    <option value="N/A">N/A</option>
-                  </select>
-                  <span class="text-danger">{{ $errors->first('storageType1') }}</span>
-            </div>
-            <div class="col-md-4 mb-2">
-                <label for="exampleFormControlInput1" class="form-label">Storage 1:</label>
-                <input type="text" class="form-control" id="storage1" name="storage1" placeholder="ex. 120gb">
-                <span class="text-danger">{{ $errors->first('Storage') }}</span>
-            </div> --}}
+
 
             <div class="col-md-6 mb-2">
                 <label for="exampleFormControlInput1" class="form-label">Storage 1:</label>
@@ -138,11 +124,7 @@
                 <input type="text" class="form-control" id="ram" name="ram" placeholder="ex. 8gb">
                 <span class="text-danger">{{ $errors->first('ram') }}</span>
             </div>
-            {{-- <div class="col-md-3 ">
-                <label for="exampleFormControlInput1" class="form-label">RAM Speed:</label>
-                <input type="text" class="form-control" id="ramSpeed" name="ramSpeed">
-                <span class="text-danger">{{ $errors->first('ramSpeed') }}</span>
-            </div> --}}
+
             <div class="col-md-3 mb-2">
                 <label for="exampleFormControlInput1" class="form-label">RAM Speed:</label>
                 <div class="input-group flex-nowrap">
@@ -150,23 +132,9 @@
                     <input type="text" class="form-control" placeholder="ex. 3200" aria-describedby="addon-wrapping" id="ramSpeed" name="ramSpeed">
                     <span class="input-group-text" id="addon-wrapping">Mhz</span>
                     <span class="text-danger">{{ $errors->first('ramSpeed') }}</span>
-                  </div>
+                </div>
             </div>
-            {{-- <div class="col-md-2 mb-2">
-                <label for="exampleFormControlInput1" class="form-label">Storage Type 2:</label>
-                <select class="form-select" aria-label="storageType2" id="storageType2" name="storageType2">
-                    <option selected>Select Storage Type</option>
-                    <option value="SSD">SSD</option>
-                    <option value="HDD">HDD</option>
-                    <option value="N/A">N/A</option>
-                  </select>
-                  <span class="text-danger">{{ $errors->first('storageType2') }}</span>
-            </div>
-            <div class="col-md-4 mb-2 mb-2">
-                <label for="exampleFormControlInput1" class="form-label">Storage 2:</label>
-                <input type="text" class="form-control" id="storage2" name="storage2" placeholder="ex. 500gb">
-                <span class="text-danger">{{ $errors->first('storage2') }}</span>
-            </div> --}}
+
             <div class="col-md-6 mb-2">
                 <label for="exampleFormControlInput1" class="form-label">Storage 2:</label>
                 <div class="input-group mb-2">

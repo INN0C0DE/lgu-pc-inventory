@@ -1,11 +1,11 @@
 @extends('template.ui')
 @section('content')
-<div class="container-fluid pt-3">
+<div class="container-fluid pt-3 ">
     <div class="row">
-        <div class="col-lg-6 mb-1">
+        <div class="col-lg-6 mb-1 ">
             <h1>PC INVENTORY</h1>
         </div>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6 mb-4 ">
             <!-- Desktop View: Icon and Text -->
             <a href="{{ route('inventory.create') }}" class="btn btn-secondary float-end d-none d-lg-inline">
                 <i class="bi bi-plus-circle"></i> Add Inventory
