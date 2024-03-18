@@ -114,6 +114,10 @@
                                         <i class="bi bi-printer-fill ms-3 me-1"></i>
                                         <span>Print Inventory</span>
                                     </a>
+                                    <a class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : 'text-white' }}" href="{{ route('profile.edit') }}">
+                                        <i class="bi bi-person-circle ms-3 me-1"></i>
+                                        <span>Profile</span>
+                                    </a>
                                     <hr>
                                     {{-- Logout function --}}
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -152,6 +156,10 @@
                             <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
                                 <i class="bi bi-printer-fill ms-3 me-1"></i>
                                 <span>Print Inventory</span>
+                            </a>
+                            <a class="nav-link {{ request()->routeIs('profile.edit') ? 'active' : 'text-white' }}" href="{{ route('profile.edit') }}">
+                                <i class="bi bi-person-circle ms-3 me-1"></i>
+                                <span>Profile</span>
                             </a>
                             <hr>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
