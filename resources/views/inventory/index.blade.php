@@ -11,7 +11,7 @@
                 <i class="bi bi-plus-circle"></i> Add Inventory
             </a>
             <!-- Mobile View: Icon Only -->
-            <a href="{{ route('inventory.create') }}" class="btn btn-secondary d-lg-none">
+            <a href="{{ route('inventory.create') }}" class="btn btn-secondary d-lg-none text-white">
                 <i class="bi bi-plus-circle"></i> Add Inventory
             </a>
         </div>
@@ -55,10 +55,12 @@
               <tr class="text-nowrap table-light">
                 <td class="text-center">
                     <a href="{{ route('inventory.edit', ['i'=>$i]) }}" class="btn btn-primary btn-sm text-white"><i class="bi bi-pencil-square"></i> Edit</a>
-                    <form action="{{ route('inventory.destroy', ['i'=>$i]) }}" method="post" class="d-inline">
+                    <form action="{{ route('inventory.destroy', ['i'=>$i]) }}" method="post" class="d-inline" id="deleteForm">
                         @csrf
                         @method('delete')
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i> Delete</button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete(this.form)">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
                     </form>
                 </td>
                 <td class="text-center">{{$i->pc_type}}</td>

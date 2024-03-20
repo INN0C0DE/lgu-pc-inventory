@@ -244,6 +244,28 @@
         </script>
         @endif
 
+        <script>
+            // Function to show SweetAlert confirmation
+            function confirmDelete(form) {
+                swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this inventory!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirmed){
+                    if (isConfirmed) {
+                        form.submit(); // Submit the form if confirmed
+                    } else {
+                        swal("Cancelled", "Your inventory is not deleted.", "error");
+                    }
+                });
+            }
+        </script>
 
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
