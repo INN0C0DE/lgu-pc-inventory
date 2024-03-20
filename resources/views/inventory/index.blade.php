@@ -3,11 +3,11 @@
 <div class="container-fluid pt-3 ">
     <div class="row">
         <div class="col-lg-6 mb-1 ">
-            <h1>PC INVENTORY</h1>
+            <h1><i class="fa-solid fa-computer"></i> PC INVENTORY</h1>
         </div>
         <div class="col-lg-6 mb-4 ">
             <!-- Desktop View: Icon and Text -->
-            <a href="{{ route('inventory.create') }}" class="btn btn-secondary float-end d-none d-lg-inline">
+            <a href="{{ route('inventory.create') }}" class="btn btn-secondary float-end d-none d-lg-inline text-white">
                 <i class="bi bi-plus-circle"></i> Add Inventory
             </a>
             <!-- Mobile View: Icon Only -->
@@ -54,7 +54,7 @@
               @foreach ($inventory as $i)
               <tr class="text-nowrap table-light">
                 <td class="text-center">
-                    <a href="{{ route('inventory.edit', ['i'=>$i]) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Edit</a>
+                    <a href="{{ route('inventory.edit', ['i'=>$i]) }}" class="btn btn-primary btn-sm text-white"><i class="bi bi-pencil-square"></i> Edit</a>
                     <form action="{{ route('inventory.destroy', ['i'=>$i]) }}" method="post" class="d-inline">
                         @csrf
                         @method('delete')

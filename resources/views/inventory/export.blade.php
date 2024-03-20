@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>
-        <a href="{{ route('inventory.print') }}"><i class="bi bi-chevron-left backBTN"></i></a>Exported Inventory:
+        <a href="{{ route('inventory.print') }}"><i class="fa-solid fa-angle-left backBTN"></i></i></a> <i class="fa-solid fa-file-export ms-2"></i>Exported Inventory:
     </h1>
     <div class="container-fluid pt-3">
         <div class="row">

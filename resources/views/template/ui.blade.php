@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+    <script src="https://kit.fontawesome.com/d4078fb8b7.js" crossorigin="anonymous"></script>
     <style>
         /* Custom CSS to adjust margin-left of label */
         label[for="dt-length-0"] {
@@ -30,6 +31,11 @@
             .backBTN {
                 display: none !important;
             }
+        }
+
+        a {
+        color: inherit !important;
+        text-decoration: none !important;
         }
 
         /* Ensure the sidebar and footer occupy full height */
@@ -103,11 +109,11 @@
                                 <hr>
                                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                     <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
-                                        <i class="bi bi-table ms-3 me-1"></i>
+                                        <i class="fa-solid fa-table-list ms-3 me-1"></i>
                                         <span>Home </span>
                                     </a>
                                     <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
-                                        <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
+                                        <i class="fa-solid fa-file-circle-plus ms-3 me-1"></i>
                                         <span>Add Inventory</span>
                                     </a>
                                     <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
@@ -146,11 +152,11 @@
                         <hr>
                         <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
                             <a class="nav-link {{ request()->routeIs('inventory.index') ? 'active' : 'text-white' }}" href="{{ route('inventory.index') }}">
-                                <i class="bi bi-table ms-3 me-1"></i>
+                                <i class="fa-solid fa-table-list ms-3 me-1"></i>
                                 <span>Home </span>
                             </a>
                             <a class="nav-link {{ request()->routeIs('inventory.create') ? 'active' : 'text-white' }}" href="{{ route('inventory.create') }}">
-                                <i class="bi bi-file-earmark-plus-fill ms-3 me-1"></i>
+                                <i class="fa-solid fa-file-circle-plus ms-3 me-1"></i>
                                 <span>Add Inventory</span>
                             </a>
                             <a class="nav-link {{ request()->routeIs('inventory.print') ? 'active' : 'text-white' }}" href="{{ route('inventory.print') }}">
@@ -238,7 +244,7 @@
         </script>
         @endif
 
-        <script src="https://kit.fontawesome.com/d4078fb8b7.js" crossorigin="anonymous"></script>
+
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

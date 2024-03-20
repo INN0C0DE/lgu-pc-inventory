@@ -1,7 +1,7 @@
 @extends('template.ui')
 
 @section('content')
-<h1><a href="{{ route('inventory.index') }}"><i class="bi bi-chevron-left"></i></a></i> Print Inventory</h1>
+<h1><a href="{{ route('inventory.index') }}"><i class="fa-solid fa-angle-left ms-2"></i></a></i> <i class="fa-solid fa-print"></i> Print Inventory</h1>
 
     <br>
     <div class="container-fluid overflow-auto ms-2">

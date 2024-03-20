@@ -1,7 +1,7 @@
 @extends('template.ui')
 
 @section('content')
-    <h1> <a href="{{ route('inventory.index') }}"><i class="bi bi-chevron-left"></i></a></i> Edit Inventory</h1>
+    <h1> <a href="{{ route('inventory.index') }}"><i class="fa-solid fa-angle-left ms-2"></i></a></i> <i class="fa-solid fa-computer"></i> Edit Inventory</h1>
 
     <form action="{{ route('inventory.update', ['i'=>$inventory]) }}" method="post">
         @csrf
