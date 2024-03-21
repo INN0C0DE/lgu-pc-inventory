@@ -181,6 +181,11 @@
                     <option value="Gigabyte">Gigabyte</option>
                     <option value="ViewSonic">ViewSonic</option>
                     <option value="MSI">MSI</option>
+                    <option value="Prolink">Prolink</option>
+                    <option value="HKC">HKC</option>
+                    <option value="Philips">Philips</option>
+                    <option value="HP">HP</option>
+                    <option value="ThinkVision">ThinkVision</option>
 
                     <option value="N/A">N/A</option>
                   </select>

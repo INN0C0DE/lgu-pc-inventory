@@ -215,6 +215,12 @@
                     <option value="Gigabyte" {{ $inventory->monitor_brand == 'Gigabyte' ? 'selected' : '' }}>Gigabyte</option>
                     <option value="ViewSonic" {{ $inventory->monitor_brand == 'ViewSonic' ? 'selected' : '' }}>ViewSonic</option>
                     <option value="MSI" {{ $inventory->monitor_brand == 'MSI' ? 'selected' : '' }}>MSI</option>
+                    <option value="Prolink" {{ $inventory->monitor_brand == 'Prolink' ? 'selected' : '' }}>Prolink</option>
+                    <option value="HKC" {{ $inventory->monitor_brand == 'HKC' ? 'selected' : '' }}>HKC</option>
+                    <option value="Philips" {{ $inventory->monitor_brand == 'Philips' ? 'selected' : '' }}>Philips</option>
+                    <option value="HP" {{ $inventory->monitor_brand == 'HP' ? 'selected' : '' }}>HP</option>
+                    <option value="ThinkVision" {{ $inventory->monitor_brand == 'ThinkVision' ? 'selected' : '' }}>ThinkVision</option>
+
                     <option value="N/A" {{ $inventory->monitor_brand == 'N/A' ? 'selected' : '' }}>N/A</option>
                 </select>
 
